@@ -2,8 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>chat</h1>
-    <p class="username"> username:  {{username}} </p>
+    <div class="container">
+      <p class="username"> username:  {{username}} </p>
     <p class="onlie"> onlie: {{users.length}} </p>
+    </div>
+    
     <chatRoom v-bind:messeges="messeger" v-on:sendMessege="this.sendMessege"/>
   </div>
 </template>
@@ -66,13 +69,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+body {
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	color: #2C3E50;
+	margin: 0;
+	padding: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 15px;
+	box-sizing: border-box;
 }
 </style>
